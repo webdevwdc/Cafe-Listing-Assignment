@@ -1,0 +1,74 @@
+<div class="title">
+	<h2>cafes list</h2>
+</div>
+
+
+<div class="filter-option">
+	<ul>
+		<li>
+			<mat-form-field class="full-width">
+			  <input matInput [matDatepicker]="picker" [formControl]="date" 
+        (dateChange)="onDate()" placeholder="Choose a Date" >
+			  <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+			  <mat-datepicker touchUi="true" #picker></mat-datepicker>
+			</mat-form-field>
+		</li>
+		<li>
+    <div class="demoinput" (click)=" active = !active ">
+      <span class="plcholder">Choose a Time</span>
+      <div class="input">{{demoTime}}</div><mat-icon>access_time</mat-icon> 
+    </div>
+    <div class="overlay" *ngIf= "active == true ">
+    <div class="popup">
+      <w-time color="primary" [(userTime)]="exportTime" (onRevert)="onRevert()" (onSubmit)="onSubmit($event)"></w-time>
+    </div>
+    </div>
+		</li>
+	</ul>
+</div>
+
+<div class="container">
+<agm-map 
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="false">
+  <agm-marker 
+      *ngFor="let cafe of cafes; let i = index;"
+      
+      [latitude]="cafe.lat"
+      [longitude]="cafe.lng"
+      [label]="cafe.label"
+      [iconUrl]="'../../../assets/images/marker.png'" >
+      
+    <agm-snazzy-info-window [closeWhenOthersOpen]="true">
+      <ng-template>
+      <h4>{{cafe.name}}</h4>
+      <strong>Today : 
+        <span class="tag" *ngIf="cafe['availability'][datename].open === true">
+          Open
+        </span>
+        <span class="tag close" *ngIf="cafe['availability'][datename].open === false">
+          Close
+        </span>
+      </strong>
+
+      <strong>Today Open Time : {{cafe['availability'][datename].open_time}}</strong>
+      <strong>Today Closed Time : {{cafe['availability'][datename].close_time}}</strong>
+      <mat-icon (click)="add_fav(i)" class="add-fav">{{cafe.icon}}</mat-icon>
+
+  </ng-template>
+    </agm-snazzy-info-window>
+    
+  </agm-marker>
+  
+  <!-- <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
+      [radius]="5000"
+      [fillColor]="'red'"
+      [circleDraggable]="false"
+      [editable]="false">
+  </agm-circle> -->
+
+</agm-map>
+</div>

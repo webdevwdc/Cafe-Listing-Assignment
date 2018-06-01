@@ -1,1 +1,184 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+	margin: 0; padding: 0; font-family: "Arial";
+}
+.title{
+	padding: 10px 15px; background: #666;
+	h2{
+		text-transform: capitalize; color: #fff; letter-spacing: 1.24px; font-weight: normal;
+		padding-left: 100px;
+	}
+}
+.btn-icon{
+	padding: 2px 0 0; background: transparent; border: solid 1px; cursor: pointer;
+	position: absolute; top: 25px; left: 15px; color: #fff; width: 50px;
+	.material-icons{
+		font-size: 30px; width: auto; height: auto;
+	}
+}
+.nav-content{
+	 width: 300px;
+	> h2{
+		font-weight: normal; text-transform: capitalize; letter-spacing:1.24px; padding: 0 15px;
+	}
+}
+.mat-drawer-container{
+	height: 100vh;
+}
+.mat-drawer-content{
+	background: #fff; color: #666;
+}
+.cafes-list{
+	list-style: none; margin: 0; padding: 0;
+	li{
+		display: block; position: relative; transition: ease-in-out .2s;
+		a{
+			display: block; text-transform: capitalize;   padding: 10px 15px; line-height: 1;  cursor: pointer; font-weight: normal; font-size: 14px;
+		}
+		.add-fav{ 
+			position: absolute; top: 6px; right: 15px;  padding: 0; display: none;
+		}
+		&:hover{
+			background: #f5f5f5; color: #666;
+		}
+	}
+}
+.add-fav{
+	cursor: pointer;
+}
+agm-map {
+  height: 400px;
+}
+.filter-option{
+	background: #fff; padding: 15px;
+	.mat-form-field-appearance-legacy .mat-form-field-underline{
+		background: #666;
+	}
+	.mat-form-field-appearance-legacy .mat-form-field-label{
+		color: #666;
+	}
+	ul{
+		list-style: none; margin: 0 -15px; padding: 0;
+		li{
+			float: left; padding: 0 15px;
+			*{
+				color: #666;
+			}
+			.mat-form-field-suffix{
+				cursor: pointer;
+			}
+		}
+		&::after,&::before{
+			content: ''; clear: both; display: table;
+		}
+	}
+}
+.mat-calendar-body-today:not(.mat-calendar-body-selected){
+	border-color: #333;
+}
+.mat-dialog-container, .mat-datepicker-content{
+	background: #fff;
+	color: #333;
+	*{
+		color: #333;
+	}
+	.mat-button-wrapper{
+		color: #fff;
+	}
+	.mat-mini-fab.mat-accent{
+		background-color: #b4b4b4;
+		// .mat-button-wrapper{color: #666;}
+
+	}
+	.mat-calendar-period-button{
+		background: #666;
+		.mat-calendar-arrow{display: none;}
+	}
+}
+.container{
+	padding: 0 15px;
+}
+.si-content-wrapper{
+	letter-spacing: 1.24px; min-width: 300px; padding: 10px 10px 20px 10px;
+	.si-content{
+		max-width: inherit !important; max-height: inherit !important;
+	}
+	h4{
+		margin: 0 0 10px 0;
+	}
+	strong{
+		margin: 5px 0;  display: block; font-weight: normal;
+		span.tag{
+			background: green; padding: 4px 10px; color: #fff; font-size: 12px;
+			border-radius: 10px;
+			&.close{
+				background:#ea4335;
+			}
+		}
+	}
+}
+.btn2{
+	background: #666; margin: 15px 5px !important;
+}
+.popup{
+	// display: none;
+	position: absolute; left: 50%; margin-left: -150px; right: 0; top: 10%; bottom: 0; width: 300px; z-index: 999;
+	background: #fff; box-shadow: 0 0 10px rgba(0,0,0,.2); max-height: 440px;
+	&.active{
+		display: block;
+	}
+	.mat-toolbar{
+		*{
+			color: #fff;
+		}
+		.w-timepicker-selected-ampm{
+			span{
+				margin-left: 10px;
+			}
+		}
+	}
+}
+body .w-time{
+	    .w-timepicker-time-container.mat-toolbar-single-row{
+	    	max-height: 100px !important; min-height: 100px !important;     width: 100% !important;
+	    }
+	    .w-time-content{
+	    	height: auto !important;
+	    }
+	    .w-timepicker-time-container{
+	    	widows: 100%;
+	    }
+	    .mat-button{
+	    	background: #666 !important; margin: 15px 5px !important; color: #fff !important;
+	    	span{color: #fff !important;}
+	    }
+}
+.mat-dialog-container *, .mat-datepicker-content *{
+	box-sizing: border-box;
+}
+.demoinput{
+	    height: 45px; border-bottom: solid 1px #666; cursor: pointer;
+	    .plcholder{
+	    	display: block;  font-size: 12px; margin-bottom: 5px; color: #6d6d6d;
+	    }
+	.input{
+		min-width: 180px; display: inline-block;
+	}
+	.mat-icon{
+		vertical-align: middle;     margin-left: 10px;
+	}
+}
+.overlay{
+	position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; z-index: 99;
+	&::after{
+		z-index: -1; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%;
+		background: rgba(0,0,0,.7); content: '';
+	}
+}
+.mat-snack-bar-container.mat-snack-bar-center{
+	margin-bottom: 100px !important;     box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+}
+.cdk-global-overlay-wrapper{
+	    // justify-content: left !important;
+   		// margin-left: 30px;
+}

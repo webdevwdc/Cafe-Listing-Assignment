@@ -1,0 +1,251 @@
+[
+	{
+		"id" : 0, "name": "Brew’d Awakening Coffeehaus", "lat": 51.673858, "lng": 7.815982, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": false, "open_time" : null, "close_time" : null
+				},
+				"Monday":  {
+					"open": true, "open_time" : "1:00am", "close_time" : "6:30pm"
+				},
+				"Tuesday":  {
+					"open": true, "open_time" : "9:00am", "close_time" : "8:00pm"
+				},
+				"Wednesday": {
+					"open": false, "open_time" : null, "close_time" : null
+				},
+				"Thursday": { 
+					"open": true, "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Friday": {
+					"open": true, "open_time" : "08:00am", "close_time" : "6:00pm"
+				},
+				"Saturday": {
+					"open": true, "open_time" : "10:00am", "close_time" : "6:30pm"
+				}
+		}
+	},
+	{
+		"id" : 1, "name": "The Dairy Godmother", "lat": 51.373858, "lng": 7.215982, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": true, "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Monday":  {
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+				"Tuesday":  {
+					"open": false, "open_time" : null, "close_time" : null
+				},
+				"Wednesday": {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Thursday": { 
+					"open": false, "open_time" : null, "close_time" : null
+				},
+				"Friday": {
+					"open": true, "open_time" : "12:00am", "close_time" : "6:30pm"
+				},
+				"Saturday": {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				}
+		}
+	},
+	{
+		"id" : 2, "name": "Kale Me Crazy",  "lat": 51.023858, "lng": 7.895982, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Monday":  {
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+
+				"Tuesday":  {
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+				"Wednesday": {
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+				"Thursday": { 
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+				"Friday": {
+					"open": false, "open_time" : null, "close_time" : null
+				},
+				"Saturday": {
+					"open": true, "open_time" : "10:00am", "close_time" : "6:30pm"
+				}
+		}
+	},
+	{
+		"id" : 3, "name": "Turnip the Beet ", "lat": 51.223858, "lng": 6.895981, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+				"Monday":  {
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+
+				"Tuesday":  {
+					"open": false, "open_time" : null, "close_time" : null
+				},
+				"Wednesday": {
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+				"Thursday": { 
+					"open": true, "open_time" : "8:00am", "close_time" : "3:30pm"
+				},
+				"Friday": {
+					"open": true, "open_time" : "11:10am", "close_time" : "3:30pm"
+				},
+				"Saturday": {
+					"open": true, "open_time" : "10:00am", "close_time" : "6:30pm"
+				}
+		}
+	},
+	{
+		"id" : 4, "name": "Lettuce B. Frank", "lat": 51.723860, "lng": 6.895282, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Monday":  {
+					"open": false,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+
+				"Tuesday":  {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Wednesday": {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Thursday": { 
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Friday": {
+					"open": true,  "open_time" : "12:10am", "close_time" : "6:30pm"
+				},
+				"Saturday": {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				}
+		}
+	},
+	{
+		"id" : 5, "name": "Party Fowl", "lat": 51.723862, "lng": 7.195283, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Monday":  {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+
+				"Tuesday":  {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Wednesday": {
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Thursday": { 
+					"open": true,  "open_time" : "10:00am", "close_time" : "6:30pm"
+				},
+				"Friday": {
+					"open": true,  "open_time" : "06:00am", "close_time" : "6:30pm"
+				},
+				"Saturday": {
+					"open": false, "open_time" : null, "close_time" : null
+				}
+		}
+	},
+	{
+		"id" : 6, "name": "Rolling Dough Cookie Company", "lat": 51.123860, "lng": 7.695282, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Monday":  {
+					"open": false, "open_time" : null, "close_time" : null
+				},
+
+				"Tuesday":  {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Wednesday": {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Thursday": { 
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Friday": {
+					"open": true, "open_time" : "7:10am", "close_time" : "11:00pm"
+				},
+				"Saturday": {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				}
+		}
+	},
+	{
+		"id" : 7, "name": "Wok N' Roll", "lat": 51.123820, "lng": 8.295202, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Monday":  {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+
+				"Tuesday":  {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Wednesday": {
+					"open": false, "open_time" : null, "close_time" : null
+				},
+				"Thursday": { 
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Friday": {
+					"open": true, "open_time" : "10:53am", "close_time" : "11:00pm"
+				},
+				"Saturday": {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				}
+		}
+	},
+	{
+		"id" : 8, "name": "Wild Thyme Cafe", "lat": 51.121860, "lng": 6.220282, "label" : "",
+		"icon": "favorite_border",
+		"availability" : {
+				"Sunday":  {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Monday":  {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Tuesday":  {
+					"open": true,"open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Wednesday": {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Thursday": { 
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				},
+				"Friday": {
+					"open": false, "open_time" : "10:12am", "close_time" : "11:00pm"
+				},
+				"Saturday": {
+					"open": true, "open_time" : "10:00am", "close_time" : "11:00pm"
+				}
+		}
+	}
+]
