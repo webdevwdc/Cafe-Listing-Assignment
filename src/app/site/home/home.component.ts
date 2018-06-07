@@ -12,7 +12,6 @@ import { uniq, compact, flatten } from 'lodash';
 import  {MatSnackBar } from '@angular/material';
 
 import { MatDialog, MatDialogRef } from '@angular/material';
-import { WTimeDialogComponent } from '../time-picker/w-time-dialog.component';
 import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -20,11 +19,10 @@ import { MAT_DIALOG_DATA } from '@angular/material';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-
-
 export class HomeComponent implements OnInit {
 
-  cafes: any;
+  title = "cafes list"
+  cafes: any;  
   cafesid:any;
   datename:any;
   active=false;
@@ -33,14 +31,11 @@ export class HomeComponent implements OnInit {
   url = "../asset/image"
   current_date:string;
   current_day:string;
-  compCloseTime:any;
-  compOpenTime:any;
-
-  filteredcafes:any;
-
   zoom: number = 8;
   lat: number = 51.673858;
   lng: number = 7.815982;
+
+  marker = 'assets/images/marker.png';
 
 
   date = new FormControl();
@@ -48,45 +43,37 @@ export class HomeComponent implements OnInit {
 
   constructor( public snackBar: MatSnackBar,
     private http: HttpClient, private service: CafesService, public dialog: MatDialog) {
-    this.current_date = moment().format("MMM Do YY");
-    this.current_day = moment().format("dddd");
-
-    this.demoTime = "Choose a Time"
+    this.current_date = moment().format('MMM Do YY');
+    this.current_day = moment().format('dddd');
+    this.demoTime = 'Choose a Time'
   }
-
- 
-  add_fav(i){
-
+  add_fav(i) {
       this.cafesid = this.cafes.filter(cafes => cafes.id >= 0)[i];
-      this.cafesid['icon'] = "favorite";
-      localStorage.setItem(this.cafesid, "favorite" );
-      localStorage.setItem([i] + ": You added as favourite cafe is", this.cafesid['name']);
-      // localStorage.setItem("favList", this.cafesid['id']);
-      localStorage.setItem("Total", JSON.stringify( this.cafes))
+      this.cafesid['icon'] = 'favorite';
+      localStorage.setItem([i] + ': You added as favourite cafe is', this.cafesid['name']);
+      localStorage.setItem('Total', JSON.stringify( this.cafes));
   }
 // DATE FILTER
-  onDate(event){
+  onDate(event) {
 
      this.current_day = this.date.value;
       const d = this.date.value;
-      const datepipe = new DatePipe("en-US");
+      const datepipe = new DatePipe('en-US');
       const day_name = datepipe.transform(d, 'EEEE');
       const day_date = datepipe.transform(d, 'MM-d-y');
       this.datename = day_name;
 
       this.getFavourites();
-      this.cafes = this.cafes.filter(cafes =>  cafes['availability'][day_name]['open'] == true);
-      
+      this.cafes = this.cafes.filter(cafes =>  cafes['availability'][day_name]['open'] === true);
       this.snackBar.open(`You Choose: ${day_name} ${day_date}`, null, {
         duration: 1000,
-      });    
+      });
   }
   // TIME FILETER
-  private exportTime = {hour: 7, minute: 15, meriden: 'PM', format: 12};
-  
-  public getFavourites(){
-    if(localStorage.getItem('Total') != null){
-      this.cafes = JSON.parse(localStorage.getItem('Total'))
+  private exportTime = { hour: 7, minute: 15, meriden: 'PM', format: 12 };
+  public getFavourites() {
+    if (localStorage.getItem('Total') != null) {
+      this.cafes = JSON.parse(localStorage.getItem('Total'));
     }
   }
   public onRevert() {
@@ -100,58 +87,51 @@ export class HomeComponent implements OnInit {
       duration: 1000,
     });
 
-    this.active = false
+    this.active = false;
     this.demoTime = this.exportTime.hour + ":" + this.exportTime.minute + this.exportTime.meriden
     // CONVERT 12 HOURS TO 24 HOURS
-    const time24 = moment(this.demoTime, "h:mm A").format("HH:mm")
-    const diff = moment(time24,"HH:mm").startOf('minutes').fromNow();
+    const time24 = moment(this.demoTime, 'h:mm A').format('HH:mm');
     this.getFavourites();
-    const datepipe = new DatePipe("en-US");
+    const datepipe = new DatePipe('en-US');
     const day_name = datepipe.transform(this.date.value, 'EEEE');
-    let localCafeList = this.cafes;
+    const localCafeList = this.cafes;
     let localCafeTmp = [];
-    
     for (var i = localCafeList.length - 1; i >= 0; i--) {
-      const getIn24O = localCafeList.map(cafes => 
-        moment(cafes['availability'][day_name].open_time, "h:mm A").format("HH:mm"))[i];
+      const getIn24O = localCafeList.map(cafes =>
+        moment(cafes['availability'][day_name].open_time, 'h:mm A').format('HH:mm'))[i];
 
       const getIn24C = localCafeList.map(cafes => 
-        moment(cafes['availability'][day_name].close_time, "h:mm A").format("HH:mm"))[i];
-      
+        moment(cafes['availability'][day_name].close_time, 'h:mm A').format('HH:mm'))[i];
 
       const compOpenTime = moment(getIn24O, 'h:mma').isBefore(moment(time24, 'h:mma'));
       const compCloseTime = moment(time24, 'h:mma').isBefore(moment(getIn24C, 'h:mma'));
-      
-      if(compOpenTime == true && compCloseTime == true){
-        localCafeTmp.push(this.cafes.filter(cafes =>  cafes.id  == localCafeList[i].id));
+      if (compOpenTime === true && compCloseTime === true) {
+        localCafeTmp.push(this.cafes.filter(cafes =>  cafes.id  === localCafeList[i].id));
       }
     }
     this.cafes = uniq(compact(flatten(localCafeTmp)));
   }
 
-  
-
   getCafes() {
     const today = Date.now()
-    const datepipe = new DatePipe("en-US");
+    const datepipe = new DatePipe('en-US');
     const day_name = datepipe.transform(today, 'EEEE');
-    this.datename = day_name
+    this.datename = day_name;
 
-    if(localStorage.getItem('Total') != null){
-      this.cafes = JSON.parse(localStorage.getItem('Total'))
+    if (localStorage.getItem('Total') != null) {
+      this.cafes = JSON.parse(localStorage.getItem('Total'));
     } else {
       this.service.getCafes().subscribe(res => {
         this.cafes = res;
       });
-    }    
-  };
+    }
+  }
 
 
   ngOnInit() {
     this.getCafes();
   }
 }
-// just an interface for type safety.
 interface marker {
 	lat: number;
 	lng: number;

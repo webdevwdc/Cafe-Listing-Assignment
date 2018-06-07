@@ -1,7 +1,7 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="nav-content">
-    	<h2>cafes list</h2>
+    	<h2>{{title}}</h2>
     	<ul class="cafes-list" >
     		<li *ngFor=" let cafe of cafes; let i = index">
     			<a>{{cafe.name}}</a>

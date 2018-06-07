@@ -5,31 +5,35 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [CafesService]
 })
 export class AppComponent {
-  title = 'app';
-  close:boolean;
-  favrt:boolean;
-  favicon = "favorite_border";
+  title = 'Cafes List';
+  close: boolean;
+  favrt: boolean;
+  favicon = 'favorite_border';
   icon = 'reorder';
-  cafes:any;
+  cafes: any;
 
-  Icon(){
-  	this.close = !this.close
-  	if(this.close == true){
-  		this.icon = "close" ;
-  	} else {
-  		this.icon = "reorder" ;
-  	}
-	}
-  constructor(private http: HttpClient, private service: CafesService){}
-    getCafes() {
-      this.service.getCafes().subscribe(res => {
-        this.cafes = res;
-      });
-    };
-    ngOnInit() {
-      this.getCafes();
-    }
+  Icon() {
+  this.close = !this.close;
+  if (this.close === true) {
+  this.icon = 'close' ;
+  } else {
+  this.icon = 'reorder' ;
+  }
+}
+  constructor(private http: HttpClient, private service: CafesService) {}
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnInit() {
+    this.getCafes();
+  }
+  getCafes() {
+    this.service.getCafes().subscribe(results => {
+      this.cafes = results;
+      console.log(this.cafes);
+    });
+  }
 }

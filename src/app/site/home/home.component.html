@@ -1,5 +1,5 @@
 <div class="title">
-	<h2>cafes list</h2>
+	<h2>{{title}}</h2>
 </div>
 
 
@@ -37,10 +37,10 @@
   <agm-marker 
       *ngFor="let cafe of cafes; let i = index;"
       
-      [latitude]="cafe.lat"
-      [longitude]="cafe.lng"
-      [label]="cafe.label"
-      [iconUrl]="'../../../assets/images/marker.png'" >
+      [latitude]="cafe['geometry'].lat"
+      [longitude]="cafe['geometry'].lng"
+      [label]="cafe['geometry'].label"
+      [iconUrl]="cafe['geometry'].icon" >
       
     <agm-snazzy-info-window [closeWhenOthersOpen]="true">
       <ng-template>

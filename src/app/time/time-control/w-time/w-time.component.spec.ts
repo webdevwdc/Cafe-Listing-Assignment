@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WTimeComponent } from './w-time.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core"
+
+import {MatToolbarModule, MatCommonModule, MatButtonModule} from '@angular/material';
 
 describe('WTimeComponent', () => {
   let component: WTimeComponent;
@@ -8,7 +11,11 @@ describe('WTimeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WTimeComponent ]
+      imports: [MatToolbarModule, MatCommonModule, MatButtonModule],
+      declarations: [ WTimeComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   }));
